@@ -1,0 +1,25 @@
+﻿<fieldset class="fieldset">
+    <legend>Listagem de veículos</legend>
+    <div class="row-fluid">
+        <div class="span6">
+            @Html.AntiForgeryToken()
+            <table id="dt" class="dt table table-striped table-bordered"
+                   style="width:100%"
+                   data-url="/TipoVeiculo/List"
+                   data-cols="modelo,descricao"
+                   data-what="TipoVeiculos KeepTrack"
+                   data-delete-url="/TipoVeiculo/Delete"
+                   data-create-url="/TipoVeiculo/Create"
+                   data-edit-url="/TipoVeiculo/Edit">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th data-orderable="false" class="w-110"></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</fieldset>
+<br />

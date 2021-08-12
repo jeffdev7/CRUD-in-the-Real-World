@@ -1,0 +1,69 @@
+﻿
+@model Veiculo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>@ViewData["Title"]</h4>
+
+<form asp-action="Create" id="myform">
+
+    <div class="row">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="col-12">
+            <div class="card mt-2">
+                <div class="card-body">
+                    <div class="card-title"><h6>Informações Básicas</h6></div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="TipoVeiculoId" class="control-label">Veículo</label>
+                                <select asp-for="TipoVeiculoId" asp-items="@ViewBag.TipoVeiculos" class="form-control form-control-sm">
+                                    <option selected="selected" value="0">Selecione</option>
+
+                                </select>
+                            </div>
+                            <span asp-validation-for="TipoVeiculoId" class="text-danger"></span>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label asp-for="Placa" class="control-label">Placa</label>
+                                <input asp-for="Placa" class="form-control form-control-sm" />
+                            </div>
+                            <span asp-validation-for="Placa" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="Parking" class="control-label">Parking</label>
+                                <input asp-for="Parking" class="form-control form-control-sm" />
+                            </div>
+                            <span asp-validation-for="Parking" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="Status" class="control-label">Status</label>
+                                <select asp-for="Status" asp-items="@ViewBag.Status" class="form-control form-control-sm">
+                                    <option selected="selected" value="0">Selecione</option>
+
+                                </select>
+                            </div>
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+
+
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-3">
+            <input type="submit" value="Cadastrar" class="btn btn-outline-success btn-sm w-150" /> |
+            <a class="btn btn-outline-secondary btn-sm w-150" asp-action="Index">Voltar</a>
+        </div>
+
+    
+
+</form>
